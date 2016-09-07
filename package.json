@@ -1,0 +1,41 @@
+{
+  "name": "redux-reducers",
+  "version": "0.1.0",
+  "description": "Unobtrusive reusable redux reducers",
+  "main": "source/index.js",
+  "scripts": {
+    "test": "eslint source && nyc ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/casparrolfe/redux-reducers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/casparrolfe/redux-reducers/issues"
+  },
+  "homepage": "https://github.com/casparrolfe/redux-reducers#readme",
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "babel-eslint": "^6.1.2",
+    "eslint": "^3.4.0",
+    "nyc": "^8.1.0",
+    "redux": "^3.6.0"
+  },
+  "ava": {
+    "files": [
+      "source/**/__tests__/*.test.js"
+    ],
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ]
+  }
+}

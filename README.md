@@ -44,7 +44,7 @@ import { createStore, combineReducers } from 'redux';
 import { wrapReducer, wrapActionCreator } from 'redux-reducers';
 
 const reducer = combineReducers({
-  one: wrapReducer('targetID', addReducer),
+  one: wrapReducer('target ID', addReducer),
   two: wrapReducer('two', addReducer),
 });
 

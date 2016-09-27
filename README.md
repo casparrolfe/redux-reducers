@@ -1,4 +1,4 @@
-# redux-reducers ![CI Status](https://circleci.com/gh/:casparrolfe/:redux-reducers.png?circle-token=:circle-token)
+# redux-reducers [![CircleCI](https://circleci.com/gh/casparrolfe/redux-reducers.svg?style=svg)](https://circleci.com/gh/casparrolfe/redux-reducers)
 
 Unobtrusive reusable redux reducers
 

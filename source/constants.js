@@ -1,1 +1,1 @@
-export const ID_KEY = '__REDUCER_ID__';
+export const ID_KEY = '__reducerId';

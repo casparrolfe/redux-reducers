@@ -74,8 +74,6 @@ const dispatchToMyTarget = wrapDispatch(store.dispatch, 'my target');
 dispatchToMyTarget(action); // action that will be picked up by reducers that target that id
 ```
 
-
-
 ### idCreator
 
 `idCreator` can be a string, number or a function, where the function is
@@ -85,4 +83,37 @@ of the form:
 idCreator(action) {
   return action.meta.id;
 }
+```
+
+### `composeReducers(reducers)`
+
+Compose reducers from right to left.
+
+```js
+const action = {
+  type: ACTION_TYPE,
+  payload: 1,
+};
+
+function reducerOne(state = 0, action) {
+  switch (action.type) {
+    case ACTION_TYPE:
+      return state + action.payload;
+    default:
+      return state;
+  }
+}
+
+function reducerTwo(state = 0, action) {
+  switch (action.type) {
+    case ACTION_TYPE:
+      return state + action.payload;
+    default:
+      return state;
+  }
+}
+
+const composedReducer = composeReducers(reducerThree, reducerTwo);
+
+composedReducer(0, action); // 2
 ```

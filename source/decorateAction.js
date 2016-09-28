@@ -6,15 +6,15 @@ import { ID_KEY } from './constants';
  * @returns {Object}
  */
 function mapActionToId(idCreator, action) {
-  switch (typeof idCreator) {
-    case 'string':
-    case 'number':
-      return idCreator;
-    case 'function':
-      return idCreator(action);
-    default:
-      throw new Error('Incompatible value passed to idCreator');
+  if (typeof idCreator === 'string' || typeof idCreator === 'number') {
+    return idCreator;
   }
+
+  if (typeof idCreator === 'function') {
+    return idCreator(action);
+  }
+
+  throw new Error('Incompatible value passed to idCreator');
 }
 
 /**

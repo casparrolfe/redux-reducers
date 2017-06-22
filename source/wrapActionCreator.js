@@ -5,10 +5,10 @@ import decorateAction from './decorateAction';
  * @param {function} actionCreator
  * @returns {Object}
  */
-export default function wrapActionCreator(idCreator, actionCreator) {
-  return function wrappedActionCreator(...args) {
-    const action = actionCreator(...args);
+const wrapActionCreator = (idCreator, actionCreator) => (...args) => {
+  const action = actionCreator(...args);
 
-    return decorateAction(idCreator, action);
-  }
+  return decorateAction(idCreator, action);
 }
+
+export default wrapActionCreator

@@ -5,8 +5,7 @@ import decorateAction from './decorateAction';
  * @param {string|number|function} idCreator
  * @returns {function}
  */
-export default function wrapDispatch(dispatch, idCreator) {
-  return function wrappedDispatch(action) {
-    dispatch(decorateAction(idCreator, action));
-  };
-}
+const wrapDispatch = (dispatch, idCreator) => (action) =>
+  dispatch(decorateAction(idCreator, action))
+
+export default wrapDispatch

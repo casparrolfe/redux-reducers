@@ -76,12 +76,12 @@ dispatchToMyTarget(action); // action that will be picked up by reducers that ta
 
 ### idCreator
 
-`idCreator` can be a string, number or a function, where the function is
-of the form:
+`idCreator` can be a string, number or a function, where the function maps
+the action to an id:
 
 ```js
-idCreator(action) {
-  return action.meta.id;
+function idCreator(action) {
+  return action.meta.foo;
 }
 ```
 

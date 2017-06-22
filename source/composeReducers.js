@@ -1,9 +1,6 @@
-export default function composeReducers(...reducers) {
-  return function composedReducer(state, action) {
-    return reducers
-      .reverse()
-      .reduce((newState, reducer) => {
-        return reducer(newState, action);
-      }, state);
-  };
-}
+const composeReducers = (...reducers) => (state, action) =>
+  reducers
+    .reverse()
+    .reduce((newState, reducer) => reducer(newState, action), state)
+
+export default composeReducers
